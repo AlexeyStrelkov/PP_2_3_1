@@ -10,8 +10,12 @@ import java.util.List;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    @PersistenceContext
     private EntityManager manager;
+
+    @PersistenceContext
+    public void setEntityManager(EntityManager manager) {
+        this.manager = manager;
+    }
 
     @Override
     public void save(User user) {
