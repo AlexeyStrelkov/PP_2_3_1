@@ -26,8 +26,13 @@ import java.util.Properties;
 @ComponentScan("web")
 public class HibernateConfig {
 
-    @Resource
+
     private Environment env;
+
+    @Resource
+    public void HibernateConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
