@@ -12,7 +12,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.io.IOException;
@@ -26,11 +25,9 @@ import java.util.Properties;
 @ComponentScan("web")
 public class HibernateConfig {
 
-
     private Environment env;
 
-    @Resource
-    public void HibernateConfig(Environment env) {
+    public HibernateConfig(Environment env) {
         this.env = env;
     }
 

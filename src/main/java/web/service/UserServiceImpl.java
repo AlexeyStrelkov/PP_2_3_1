@@ -1,6 +1,5 @@
 package web.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import web.dao.UserDao;
 import web.model.User;
 import org.springframework.stereotype.Service;
@@ -13,10 +12,10 @@ public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
 
-    @Autowired
-    public void setUserDao(UserDao userDao) {
+    public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
+
 
     @Override
     @Transactional
